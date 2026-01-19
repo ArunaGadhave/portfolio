@@ -1,20 +1,40 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center h-[80vh]
-      text-center text-black dark:text-white">
-      <h1 className="text-5xl font-bold mb-4">
-        Hi, I'm Pragati Gadhave
+    <section
+      className="min-h-screen flex flex-col justify-center items-center
+      px-4 text-center
+      bg-gray-100 dark:bg-gray-900
+      text-black dark:text-white"
+    >
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+        Pragati Gadhave
       </h1>
-      <p className="text-xl mb-6">
-       Software Developer / Full Stack Developer
+
+      <p className="text-base sm:text-lg md:text-xl mb-6 max-w-xl">
+      Software Developer | Full Stack Developer 
       </p>
-      <a
-        href="/projects"
-        className="px-6 py-3 bg-blue-600 text-white rounded-lg"
-      >
-        View Projects
-      </a>
-    </div>
+
+      <div className="flex flex-col sm:flex-row gap-4">
+        {/* Go to Projects page */}
+        <Link
+          to="/projects"
+          className="px-6 py-3 bg-blue-600 text-white rounded text-sm sm:text-base"
+        >
+          View Projects
+        </Link>
+
+        {/* Download Resume */}
+        <a
+          href="/resume.pdf "
+          download
+          className="px-6 py-3 border rounded text-sm sm:text-base"
+        >
+          Download Resume
+        </a>
+      </div>
+    </section>
   );
 };
 
