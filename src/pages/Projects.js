@@ -15,22 +15,50 @@ const Projects = () => {
           {
             title: "Personal Portfolio Website",
             tech: "React, Tailwind CSS",
-            desc: "Animated dark mode, responsive UI, deployed on Vercel",
+            points: [
+              "Developed a fully responsive personal portfolio website using React and Tailwind CSS.",
+              "Implemented dark/light mode with smooth UI animations and reusable components.",
+              "Structured sections for About, Skills, Experience, Projects, and Contact.",
+              "Optimized performance with mobile-first design principles.",
+              "Deployed the application on Vercel for live access and updates."
+            ],
+            gitlive: "https://github.com/ArunaGadhave/portfolio",
+            live: "https://portfolio-iota-sepia-ntm52jccg8.vercel.app",
           },
           {
             title: "Property Solution Web App",
             tech: "PHP, CodeIgniter, MySQL",
-            desc: "Property listings, admin panel, MVC architecture",
+            points: [
+              "Built a dynamic property solution web application using MVC architecture.",
+              "Implemented property listings with full CRUD functionality.",
+              "Developed admin panel for managing properties and users.",
+              "Integrated MySQL database for secure data storage.",
+              "Focused on scalability and clean backend logic."
+            ],
           },
           {
             title: "Lokpratinidhi Mantrimandal App",
             tech: "PHP, CodeIgniter",
-            desc: "Role-based login, admin panel",
+            points: [
+              "Developed a role-based web application with secure authentication.",
+              "Implemented admin panel for managing Lokpratinidhi and Mantrimandal data.",
+              "Handled session management and access control.",
+              "Designed structured backend logic using CodeIgniter.",
+              "Improved administrative workflow efficiency."
+            ],
+            live: "https://lokpratinidhi.co.in",
           },
           {
-            title: "Virtual Tourist Guide",
-            tech: "Java, Android",
-            desc: "Tourist info, search & images",
+            title: "Import Export Website",
+            tech: "HTML, CSS, Bootstrap, JavaScript, jQuery, CodeIgniter",
+            points: [
+              "Designed and developed a responsive import-export business website.",
+              "Created user-friendly UI using HTML, CSS, and Bootstrap.",
+              "Added interactivity using JavaScript and jQuery.",
+              "Used CodeIgniter framework for backend structure.",
+              "Enhanced online visibility for business users."
+            ],
+          live:"https://exportwingssenterprises.com",
           },
         ].map((p, i) => (
           <div
@@ -40,8 +68,39 @@ const Projects = () => {
             <h3 className="text-lg sm:text-xl font-semibold mb-1">
               {p.title}
             </h3>
-            <p className="text-sm italic mb-2">{p.tech}</p>
-            <p className="text-sm sm:text-base">{p.desc}</p>
+
+            <p className="text-sm italic mb-3">{p.tech}</p>
+
+            <ul className="list-disc list-inside space-y-1 text-sm sm:text-base">
+              {p.points.map((point, idx) => (
+                <li key={idx}>{point}</li>
+              ))}
+            </ul>
+
+            {/* Links */}
+            <div className="flex gap-4 mt-4 flex-wrap">
+              {p.live && (
+                <a
+                  href={p.live}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700"
+                >
+                  🔗 Live Demo
+                </a>
+              )}
+
+              {p.gitlive && (
+                <a
+                  href={p.gitlive}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="px-4 py-2 text-sm border border-blue-600 text-blue-600 rounded hover:bg-blue-50 dark:hover:bg-gray-700"
+                >
+                  💻 GitHub Code
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>

@@ -21,7 +21,15 @@ const Experience = () => {
             <li>REST APIs, MVC, Git</li>
           </ul>
         </div>
-
+    <div>
+          <h3 className="text-lg sm:text-xl font-semibold">
+            Web Developer Intern – OsisInfobyte
+          </h3>
+          <ul className="list-disc ml-5 text-sm sm:text-base space-y-1">
+            <li>create website , landing page and web app.</li>
+            <li>Multipages website creating. </li>
+          </ul>
+        </div>
         <div>
           <h3 className="text-lg sm:text-xl font-semibold">
             Java Developer Intern – Soft the Next

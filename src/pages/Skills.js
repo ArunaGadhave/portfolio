@@ -1,6 +1,22 @@
 const Skills = () => {
+  const skills = [
+    {
+      title: "Frontend",
+      items: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS","BootSrap","JQuery","Ajax"]
+    },
+    {
+      title: "Backend",
+      items: ["PHP", "CodeIgniter", "Java"]
+    },
+    {
+      title: "Database & Tools",
+      items: ["SQL","MySQL", "Git", "GitHub", "VS Code", "Codelobster","Ecllipce"]
+    }
+  ];
+
   return (
     <section
+      id="skills"
       className="px-4 sm:px-8 md:px-16 py-10
       bg-white dark:bg-gray-800
       text-black dark:text-white"
@@ -10,26 +26,29 @@ const Skills = () => {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div>
-          <h3 className="font-semibold">Frontend</h3>
-          <p className="text-sm sm:text-base">
-            React, JavaScript, HTML5, CSS3, Tailwind CSS
-          </p>
-        </div>
+        {skills.map((group, index) => (
+          <div
+            key={index}
+            className="p-6 bg-gray-100 dark:bg-gray-900 rounded shadow"
+          >
+            <h3 className="font-semibold text-lg mb-4">
+              {group.title}
+            </h3>
 
-        <div>
-          <h3 className="font-semibold">Backend</h3>
-          <p className="text-sm sm:text-base">
-            PHP, CodeIgniter, Java
-          </p>
-        </div>
-
-        <div>
-          <h3 className="font-semibold">Database & Tools</h3>
-          <p className="text-sm sm:text-base">
-            MySQL, Git, GitHub, VS Code, Linux
-          </p>
-        </div>
+            <div className="flex flex-wrap gap-2">
+              {group.items.map((skill, i) => (
+                <span
+                  key={i}
+                  className="px-3 py-1 text-sm rounded-full
+                  bg-blue-100 text-blue-700
+                  dark:bg-blue-900 dark:text-blue-200"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

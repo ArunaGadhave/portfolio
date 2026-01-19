@@ -19,21 +19,22 @@ const Home = () => {
       <div className="flex flex-col sm:flex-row gap-4">
         {/* Go to Projects page */}
         <Link
-          to="/projects"
-          className="px-6 py-3 bg-blue-600 text-white rounded text-sm sm:text-base"
-        >
-          View Projects
-        </Link>
+  to="/projects"
+  className="px-6 py-3 bg-blue-600 text-white rounded text-sm sm:text-base hover:bg-blue-700 transition"
+>
+  View Projects
+</Link>
 
-        {/* Download Resume */}
-        <a
-          href="/resume.pdf "
-          download
-          className="px-6 py-3 border rounded text-sm sm:text-base"
-        >
-          Download Resume
-        </a>
+{/*<a
+  href="/resume.pdf"
+  download
+  className="px-6 py-3 border border-gray-600 rounded text-sm sm:text-base hover:bg-gray-200 dark:hover:bg-gray-700 transition"
+>
+  Download Resume
+</a>*/}
+
       </div>
+      
     </section>
   );
 };
